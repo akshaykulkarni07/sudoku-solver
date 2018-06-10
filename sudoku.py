@@ -1,5 +1,11 @@
 # Sudoku Solving Program
 
+def print_board(board):
+	for i in range(9):
+		for j in range(9):
+			print(board[i][j]),
+		print(' ')
+
 # checking validity of putting n at (x, y) on the board
 def is_valid(board, x, y, n):
 	# checking 'x'th row
@@ -47,7 +53,7 @@ def solve_sudoku(board):
 	# if there are no zeroes then board is solved
 	i, j = find_empty_space(board)
 	if i == 9 and j == 9:
-		print board
+		print_board(board)
 		return True
 	else:
 		for k in range(1, 10):
