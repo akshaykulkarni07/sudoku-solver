@@ -1,5 +1,6 @@
 # Sudoku Solving Program
 
+# function to print board in well-formatted way
 def print_board(board):
 	for i in range(9):
 		for j in range(9):
@@ -31,6 +32,7 @@ def is_valid(board, x, y, n):
 	# Otherwise valid
 	return True
 
+# function to find if any space on board is unassigned
 def find_empty_space(board):
 	for i in range(9):
 		for j in range(9):
@@ -60,12 +62,14 @@ def solve_sudoku(board):
 
 	return False
 
-# 9x9 matrix
 # creating a 2D array for the grid
 board = [[0 for x in range(9)]for y in range(9)]
 # board = np.zeros((9, 9)) 
 # assigning values to the grid
 board = [[3,0,6,5,0,8,4,0,0], [5,2,0,0,0,0,0,0,0], [0,8,7,0,0,0,0,3,1], [0,0,3,0,1,0,0,8,0], [9,0,0,8,6,3,0,0,5], [0,5,0,0,9,0,6,0,0], [1,3,0,0,0,0,2,5,0], [0,0,0,0,0,0,0,7,4], [0,0,5,2,0,6,3,0,0]]
+
+# start solving
 solved = solve_sudoku(board)
 
+# print whether solution is possible
 print(solved)
